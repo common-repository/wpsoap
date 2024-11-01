@@ -1,0 +1,34 @@
+/*
+WPSOAP CSS Document
+*/
+
+input[type=text]{
+    width:100%;
+}
+
+.badge{
+    margin: 1px 6px;
+    padding: 4px 6px !important;
+}
+
+.btn-xs{
+    padding: 1px 11px !important;
+}
+
+#myModal{
+    top:50px;
+}
+
+.alert-info{
+    background-color: #23282d !important;
+    border-color: #23282d !important;
+    color:#fff !important;
+}
+
+.wpsoap .dashicons-networking{
+    line-height: 26px;
+}
+
+.space10{
+    margin:10px 0px !important;
+}

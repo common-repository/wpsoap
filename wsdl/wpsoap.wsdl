@@ -1,0 +1,144 @@
+<?xml version ='1.0' encoding ='UTF-8' ?>
+<definitions name='HW' 
+             targetNamespace='wsdl/wpsoap.wsdl'
+             xmlns:tns='wsdl/wpsoap.wsdl'
+             xmlns:typens="urn:HW"
+             xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' 
+             xmlns:xsd='http://www.w3.org/2001/XMLSchema' 
+             xmlns:soapenc='http://schemas.xmlsoap.org/soap/encoding/' 
+             xmlns:wsdl='http://schemas.xmlsoap.org/wsdl/' 
+             xmlns='http://schemas.xmlsoap.org/wsdl/'>  
+    <message name='getPostRequest'> 
+        <part name='token' type='xsd:string'/>
+        <part name='postid' type='xsd:int'/>
+    </message> 
+    <message name='getPostResponse'> 
+        <part name='Result' type='xsd:string'/> 
+    </message> 
+    <message name='getUserRequest'>
+        <part name='token' type='xsd:string'/>
+        <part name='email' type='xsd:string'/>
+    </message> 
+    <message name='getUserResponse'> 
+        <part name='Result' type='xsd:string'/> 
+    </message> 
+    <message name='getOptionRequest'>
+        <part name='token' type='xsd:string'/>
+        <part name='key' type='xsd:string'/>
+    </message> 
+    <message name='getOptionResponse'> 
+        <part name='Result' type='xsd:string'/> 
+    </message>
+    <message name='getTermRequest'>
+        <part name='token' type='xsd:string'/>
+        <part name='term_id' type='xsd:int'/>
+        <part name='taxonomy' type='xsd:string'/>
+    </message> 
+    <message name='getTermResponse'> 
+        <part name='Result' type='xsd:string'/>
+    </message> 
+    <message name='getTaxonomyRequest'>
+        <part name='token' type='xsd:string'/>
+        <part name='name' type='xsd:string'/>
+    </message> 
+    <message name='getTaxonomyResponse'> 
+        <part name='Result' type='xsd:string'/> 
+    </message> 
+    <message name='authenticateRequest'> 
+        <part name='email' type='xsd:string'/>
+        <part name='password' type='xsd:string'/>
+    </message> 
+    <message name='authenticateResponse'> 
+        <part name='Result' type='xsd:string'/> 
+    </message> 
+
+    <portType name='HWPortType'> 
+        <operation name='getPost'> 
+            <input message='tns:getPostRequest'/> 
+            <output message='tns:getPostResponse'/> 
+        </operation> 
+        <operation name='getUser'> 
+            <input message='tns:getUserRequest'/> 
+            <output message='tns:getUserResponse'/> 
+        </operation> 
+        <operation name='getOption'> 
+            <input message='tns:getOptionRequest'/> 
+            <output message='tns:getOptionResponse'/> 
+        </operation> 
+        <operation name='getTerm'> 
+            <input message='tns:getTermRequest'/> 
+            <output message='tns:getTermResponse'/> 
+        </operation> 
+        <operation name='getTaxonomy'> 
+            <input message='tns:getTaxonomyRequest'/> 
+            <output message='tns:getTaxonomyResponse'/> 
+        </operation> 
+        <operation name='authenticate'> 
+            <input message='tns:authenticateRequest'/> 
+            <output message='tns:authenticateResponse'/>
+        </operation> 
+    </portType> 
+
+    <binding name='HWBinding' type='tns:HWPortType'> 
+        <soap:binding style='rpc'    transport='http://schemas.xmlsoap.org/soap/http'  /> 
+        <operation name='getPost'> 
+            <soap:operation soapAction='urn:localhost-hwh#getPost'/> 
+            <input> 
+                <soap:body use='encoded' namespace='urn:localhost-hw' encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>  
+            </input> 
+            <output> 
+                <soap:body use='encoded' namespace='urn:localhost-hw' encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/> 
+            </output> 
+        </operation>  
+        <operation name='getUser'> 
+            <soap:operation soapAction='urn:localhost-hwh#getUser'/> 
+            <input> 
+                <soap:body use='encoded' namespace='urn:localhost-hw' encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>  
+            </input> 
+            <output> 
+                <soap:body use='encoded' namespace='urn:localhost-hw' encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/> 
+            </output> 
+        </operation>  
+        <operation name='getOption'> 
+            <soap:operation soapAction='urn:localhost-hwh#getOption'/> 
+            <input> 
+                <soap:body use='encoded' namespace='urn:localhost-hw' encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>  
+            </input> 
+            <output> 
+                <soap:body use='encoded' namespace='urn:localhost-hw' encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/> 
+            </output> 
+        </operation>  
+        <operation name='getTerm'>
+            <soap:operation soapAction='urn:localhost-hwh#getTerm'/> 
+            <input> 
+                <soap:body use='encoded' namespace='urn:localhost-hw' encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>  
+            </input> 
+            <output> 
+                <soap:body use='encoded' namespace='urn:localhost-hw' encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/> 
+            </output> 
+        </operation>  
+        <operation name='getTaxonomy'>
+            <soap:operation soapAction='urn:localhost-hwh#getTaxonomy'/> 
+            <input> 
+                <soap:body use='encoded' namespace='urn:localhost-hw' encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>  
+            </input> 
+            <output> 
+                <soap:body use='encoded' namespace='urn:localhost-hw' encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/> 
+            </output> 
+        </operation>  
+        <operation name='authenticate'>
+            <soap:operation soapAction='urn:localhost-hwh#authenticate'/> 
+            <input> 
+                <soap:body use='encoded' namespace='urn:localhost-hw' encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>  
+            </input> 
+            <output> 
+                <soap:body use='encoded' namespace='urn:localhost-hw' encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/> 
+            </output> 
+        </operation>  
+    </binding>
+    <service name='HWService'> 
+        <port name='HWPort' binding='HWBinding'>
+            <soap:address location='SOAPSERVERURL'/>
+        </port> 
+    </service>
+</definitions>
